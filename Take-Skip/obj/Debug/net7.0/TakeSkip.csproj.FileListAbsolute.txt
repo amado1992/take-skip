@@ -18,7 +18,6 @@ D:\DesarrolloSoftware\take-skip\Take-Skip\bin\Debug\net7.0\TakeSkip.deps.json
 D:\DesarrolloSoftware\take-skip\Take-Skip\bin\Debug\net7.0\TakeSkip.runtimeconfig.json
 D:\DesarrolloSoftware\take-skip\Take-Skip\bin\Debug\net7.0\TakeSkip.dll
 D:\DesarrolloSoftware\take-skip\Take-Skip\bin\Debug\net7.0\TakeSkip.pdb
-D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.csproj.AssemblyReference.cache
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.GeneratedMSBuildEditorConfig.editorconfig
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.AssemblyInfoInputs.cache
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.AssemblyInfo.cs
@@ -28,3 +27,4 @@ D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\refint\TakeSkip.dll
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.pdb
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.genruntimeconfig.cache
 D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\ref\TakeSkip.dll
+D:\DesarrolloSoftware\take-skip\Take-Skip\obj\Debug\net7.0\TakeSkip.sourcelink.json
