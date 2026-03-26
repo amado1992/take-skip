@@ -18,6 +18,7 @@ namespace TakeSkip
                 Console.WriteLine("SKIP: " + grade);
             }
 
+            // Extension Methods
             string example = "Hello, World!";
             // Call the extension method as if it were an instance method.
             string reversed = example.Reverse();
