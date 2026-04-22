@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using Take_Skip;
 
 namespace TakeSkip
 {
@@ -24,6 +26,16 @@ namespace TakeSkip
             string reversed = example.Reverse();
             Console.WriteLine(reversed); // Output: !dlroW ,olleH
 
+            // Reflection in .NET
+            Type type = typeof(MyClass);
+            object? instance = Activator.CreateInstance(type);
+            MethodInfo? method = type.GetMethod("Sum");
+
+            if (method != null) {
+                var parameters = new object[] { 5, 3 };
+                var result = method.Invoke(instance, parameters);
+                Console.WriteLine(result); // 8
+            }
         }
     }
 }
