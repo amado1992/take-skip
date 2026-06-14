@@ -6,6 +6,13 @@ namespace TakeSkip
 {
     class Program
     {
+        enum Season
+        {
+            Spring,
+            Summer,
+            Autumn,
+            Winter
+        }
         static void Main(string[] args)
         {
             int[] grades = { 59, 82, 70, 56, 92, 98, 85 };
@@ -36,6 +43,13 @@ namespace TakeSkip
                 var result = method.Invoke(instance, parameters);
                 Console.WriteLine(result); // 8
             }
+
+            // Enum
+            Console.WriteLine(Season.Spring); // result: Spring
+
+            // Parse a string to an enum value:
+            var parsed = Enum.Parse<Season>("Winter");
+            Console.WriteLine(parsed); // Winter
         }
     }
 }
