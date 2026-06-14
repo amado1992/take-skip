@@ -13,6 +13,14 @@ namespace TakeSkip
             Autumn,
             Winter
         }
+
+        enum HttpStatus : int
+        {
+            OK = 200,
+            NotFound = 404,
+            InternalServerError = 500
+        }
+
         static void Main(string[] args)
         {
             int[] grades = { 59, 82, 70, 56, 92, 98, 85 };
@@ -46,10 +54,14 @@ namespace TakeSkip
 
             // Enum
             Console.WriteLine(Season.Spring); // result: Spring
+            Console.WriteLine(HttpStatus.InternalServerError); // result: InternalServerError
 
             // Parse a string to an enum value:
             var parsed = Enum.Parse<Season>("Winter");
             Console.WriteLine(parsed); // Winter
+
+            Console.WriteLine($"{Season.Spring} = {(int)Season.Spring}");
+            Console.WriteLine($"{HttpStatus.InternalServerError} = {(int)HttpStatus.InternalServerError}");
         }
     }
 }
