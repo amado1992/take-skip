@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Security.AccessControl;
 using Take_Skip;
 
 namespace TakeSkip
@@ -46,7 +47,8 @@ namespace TakeSkip
             object? instance = Activator.CreateInstance(type);
             MethodInfo? method = type.GetMethod("Sum");
 
-            if (method != null) {
+            if (method != null)
+            {
                 var parameters = new object[] { 5, 3 };
                 var result = method.Invoke(instance, parameters);
                 Console.WriteLine(result); // 8
@@ -62,6 +64,64 @@ namespace TakeSkip
 
             Console.WriteLine($"{Season.Spring} = {(int)Season.Spring}");
             Console.WriteLine($"{HttpStatus.InternalServerError} = {(int)HttpStatus.InternalServerError}");
+
+
+            var program = new Program();
+            var values = program.GetValuesEnum(Season.Spring);
+            Console.WriteLine($"Values enum {values}");
+
+            Array resultValues = Enum.GetValues(Season.Spring.GetType());
+            Console.WriteLine($"Value x en index x enum {resultValues.GetValue(2)}"); // Autumn
+
+            var array = Enum.GetValues(typeof(Season));
+            Console.WriteLine($"Get value in position 0 enum {array.GetValue(0)}");
+
+            var index = Array.IndexOf(array, Season.Spring);
+            Console.WriteLine($"Get index the value Season.Spring enum {index}");
+
+            foreach (var value in array)
+            {
+                Console.WriteLine($"Array of value enum {value}");
+
+                if ((Season)value == Season.Spring) 
+                {
+                }
+            }
+
+                int valueRef = 5; // Required initialize
+            program.IncrementRef(ref valueRef);
+            Console.WriteLine("Ref " + valueRef); // 6
+
+            program.IncrementOut(out int valueOut);
+            Console.WriteLine("Out " + valueOut); // 6
         }
+
+        /// <summary>
+        /// Ref read ad write
+        /// </summary>
+        /// <param name="number"></param>
+        void IncrementRef(ref int number)
+        {
+            number++; // Read and write
+        }
+
+        /// <summary>
+        /// Out only out
+        /// </summary>
+        /// <param name="number"></param>
+        void IncrementOut(out int number)
+        {
+            number = 10;
+        }
+
+        // Enum
+        public int GetValuesEnum(Enum value)
+        {
+            Console.WriteLine($"Value type enum {value.GetType()}");
+            
+            Array values = Enum.GetValues(value.GetType());
+            return Array.IndexOf(values, value);
+        }
+
     }
 }
